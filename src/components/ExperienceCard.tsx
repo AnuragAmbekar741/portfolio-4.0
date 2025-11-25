@@ -221,6 +221,9 @@ const ExperienceCard: React.FC = () => {
           )}
         </div>
 
+        {/* Background Decoration */}
+        <div className="absolute top-0 right-0 w-64 h-64 bg-orange-100/40 dark:bg-orange-900/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 pointer-events-none"></div>
+
         {/* Main Content Area with Transition Support */}
         <div
           className={`flex-grow relative overflow-y-auto no-scrollbar transition-all duration-300 ease-out ${getTransitionClass()}`}
