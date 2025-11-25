@@ -198,7 +198,7 @@ const ExperienceCard: React.FC = () => {
         <div
           className={`flex items-center justify-between mb-4 shrink-0 transition-all duration-300 ${
             selectedId
-              ? "border-b border-dashed border-gray-200 dark:border-neutral-800 pb-4"
+              ? "border-b border-dashed border-gray-200 dark:border-neutral-700 pb-4"
               : ""
           }`}
         >
@@ -261,13 +261,13 @@ const ExperienceCard: React.FC = () => {
                         !isLast ? "pb-8" : "pb-2"
                       } overflow-hidden`}
                     >
-                      <div className="p-4 rounded-2xl bg-gray-50 dark:bg-neutral-800/50 border border-transparent hover:border-orange-200 dark:hover:border-orange-800/50 hover:bg-white dark:hover:bg-neutral-800 hover:shadow-md dark:hover:shadow-none transition-all duration-300">
+                      <div className="p-4 rounded-2xl bg-gray-50 dark:bg-neutral-800/50 border border-dashed border-transparent hover:border-orange-200 dark:hover:border-orange-700/60 hover:bg-white dark:hover:bg-neutral-800 hover:shadow-md dark:hover:shadow-none transition-all duration-300">
                         {/* Row 1: Role and Date */}
                         <div className="flex items-start justify-between mb-1">
                           <h3 className="font-bold text-gray-900 dark:text-white text-base group-hover:text-orange-600 dark:group-hover:text-orange-400 transition-colors">
                             {exp.role}
                           </h3>
-                          <span className="flex items-center gap-1.5 text-[10px] md:text-xs font-mono text-gray-500 dark:text-gray-400 bg-white dark:bg-neutral-900 px-2 py-0.5 rounded-md border border-gray-100 dark:border-neutral-800">
+                          <span className="flex items-center gap-1.5 text-[10px] md:text-xs font-mono text-gray-500 dark:text-gray-400 bg-white dark:bg-neutral-900 px-2 py-0.5 rounded-md border border-dashed border-gray-100 dark:border-neutral-600">
                             <Calendar className="w-3 h-3 hidden md:inline" />
                             <span className="text-center">
                               {exp.period.split(" - ").map((part, i, arr) => (
@@ -306,7 +306,7 @@ const ExperienceCard: React.FC = () => {
           ) : (
             /* DETAIL VIEW */
             <div className="h-full flex flex-col">
-              <div className="mb-6 border-b border-dashed border-gray-200 dark:border-neutral-800 pb-3">
+              <div className="mb-6 border-b border-dashed border-gray-200 dark:border-neutral-700 pb-3">
                 {/* Desktop Layout */}
                 <div className="hidden md:flex items-center justify-between">
                   {/* Company Header */}
@@ -324,7 +324,7 @@ const ExperienceCard: React.FC = () => {
                     <h3 className="text-md font-medium text-orange-600 dark:text-stone-100">
                       {activeExp?.role}
                     </h3>
-                    <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-md bg-orange-50 dark:bg-orange-900/20 text-orange-700 dark:text-orange-300 text-[10px] md:text-xs font-mono border border-orange-100 dark:border-orange-800/30">
+                    <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-md bg-orange-50 dark:bg-orange-900/20 text-orange-700 dark:text-orange-300 text-[10px] md:text-xs font-mono border border-dashed border-orange-100 dark:border-orange-700/50">
                       <Calendar className="w-3 h-3 hidden md:inline" />
                       <span className="text-center">
                         {activeExp?.period.split(" - ").map((part, i, arr) => (
@@ -354,7 +354,7 @@ const ExperienceCard: React.FC = () => {
                     </h2>
                   </div>
                   <div className="flex flex-col gap-1 items-end shrink-0">
-                    <span className="px-2 py-0.5 rounded-md bg-orange-100 dark:bg-orange-900/30 text-orange-700 dark:text-orange-300 text-[10px] font-semibold border border-orange-200 dark:border-orange-800/50 whitespace-nowrap">
+                    <span className="px-2 py-0.5 rounded-md bg-orange-100 dark:bg-orange-900/30 text-orange-700 dark:text-orange-300 text-[10px] font-semibold border border-dashed border-orange-200 dark:border-orange-700/60 whitespace-nowrap">
                       {activeExp?.role}
                     </span>
                     <div className="inline-flex items-center gap-1 text-[9px] font-mono text-gray-500 dark:text-gray-400">
@@ -366,7 +366,7 @@ const ExperienceCard: React.FC = () => {
               </div>
 
               {/* Achievements First */}
-              <div className="space-y-3 pb-6 border-b border-dashed border-gray-200 dark:border-neutral-800 mb-6">
+              <div className="space-y-3 pb-6 border-b border-dashed border-gray-200 dark:border-neutral-700 mb-6">
                 <h4 className="text-xs font-bold text-gray-400 dark:text-gray-500 uppercase tracking-wider flex items-center gap-2 mb-2">
                   Key Achievements
                 </h4>
@@ -392,7 +392,7 @@ const ExperienceCard: React.FC = () => {
                   {activeExp?.techStack.map((tech, i) => (
                     <span
                       key={i}
-                      className="px-2.5 py-1 rounded-md text-[11px] font-medium bg-gray-50 dark:bg-neutral-800 border border-gray-200 dark:border-neutral-700 text-gray-600 dark:text-gray-400 cursor-default"
+                      className="px-2.5 py-1 rounded-md text-[11px] font-medium bg-gray-50 dark:bg-neutral-800 border border-dashed border-gray-200 dark:border-neutral-600 text-gray-600 dark:text-gray-400 cursor-default"
                     >
                       {tech}
                     </span>

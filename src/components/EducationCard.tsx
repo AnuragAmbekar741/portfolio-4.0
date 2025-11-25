@@ -100,7 +100,7 @@ const EducationCard: React.FC = () => {
       <div
         className={`flex items-center justify-between mb-4 shrink-0 transition-all duration-300 ${
           selectedId
-            ? "border-b border-gray-100 dark:border-neutral-800 pb-4"
+            ? "border-b border-dashed border-gray-100 dark:border-neutral-700 pb-4"
             : ""
         }`}
       >
@@ -144,22 +144,22 @@ const EducationCard: React.FC = () => {
                   <div className="flex flex-col items-center w-8 shrink-0 relative">
                     {/* Line */}
                     <div
-                      className={`absolute w-[2px] bg-gray-200 dark:bg-neutral-800 left-1/2 -translate-x-1/2
-                       ${isFirst ? "top-[28px] bottom-0" : ""}
+                      className={`absolute w-[2px] border-l-2 border-dashed border-gray-200 dark:border-neutral-700 left-1/2 -translate-x-1/2
+                       ${isFirst ? "top-0 bottom-0" : ""}
                        ${isLast ? "top-0 h-[28px]" : ""}
                        ${!isFirst && !isLast ? "top-0 bottom-0" : ""}
                      `}
                     ></div>
 
                     {/* Dot */}
-                    <div className="relative z-10 mt-5 w-4 h-4 rounded-full bg-white dark:bg-neutral-900 border-2 border-gray-200 dark:border-neutral-700 group-hover:border-emerald-500 transition-colors duration-300 flex items-center justify-center shadow-sm">
-                      <div className="w-1.5 h-1.5 rounded-full bg-gray-300 dark:bg-neutral-600 group-hover:bg-emerald-500 transition-colors duration-300"></div>
+                    <div className="relative z-10 mt-5 w-4 h-4 rounded-full bg-white dark:bg-neutral-900 border-2 border-gray-200 dark:border-neutral-600 group-hover:border-emerald-500 transition-colors duration-300 flex items-center justify-center shadow-sm">
+                      <div className="w-1.5 h-1.5 rounded-full bg-gray-300 dark:bg-neutral-500 group-hover:bg-emerald-500 transition-colors duration-300"></div>
                     </div>
                   </div>
 
                   {/* Content Column */}
                   <div className={`grow ${!isLast ? "pb-8" : "pb-2"}`}>
-                    <div className="p-4 rounded-2xl bg-gray-50 dark:bg-neutral-800/50 border border-transparent hover:border-emerald-200 dark:hover:border-emerald-800/50 hover:bg-white dark:hover:bg-neutral-800 hover:shadow-md dark:hover:shadow-none transition-all duration-300 group-hover:-translate-y-1">
+                    <div className="p-4 rounded-2xl bg-gray-50 dark:bg-neutral-800/50 border border-dashed border-transparent hover:border-emerald-200 dark:hover:border-emerald-700/60 hover:bg-white dark:hover:bg-neutral-800 hover:shadow-md dark:hover:shadow-none transition-all duration-300 group-hover:-translate-y-1">
                       <div className="flex items-start justify-between">
                         <div>
                           <h3 className="font-bold text-gray-900 dark:text-white text-base group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors">
@@ -172,7 +172,7 @@ const EducationCard: React.FC = () => {
                             <span className="text-[10px] font-bold uppercase tracking-wider text-emerald-600 dark:text-emerald-400 bg-emerald-100 dark:bg-emerald-900/30 px-2 py-0.5 rounded-full">
                               {edu.type}
                             </span>
-                            <span className="text-[10px] font-bold uppercase tracking-wider text-gray-600 dark:text-gray-400 bg-gray-100 dark:bg-neutral-800 px-2 py-0.5 rounded-full border border-gray-200 dark:border-neutral-700">
+                            <span className="text-[10px] font-bold uppercase tracking-wider text-gray-600 dark:text-gray-400 bg-gray-100 dark:bg-neutral-800 px-2 py-0.5 rounded-full border border-dashed border-gray-200 dark:border-neutral-600">
                               {edu.badge}
                             </span>
                             <span className="flex items-center gap-1 text-xs text-gray-400 dark:text-gray-500">
@@ -202,10 +202,10 @@ const EducationCard: React.FC = () => {
                 <span className="text-xs font-medium text-gray-500 dark:text-gray-400">
                   {activeEdu?.location}
                 </span>
-                <span className="text-[10px] font-bold uppercase tracking-wider text-gray-600 dark:text-gray-400 bg-gray-100 dark:bg-neutral-800 px-2 py-0.5 rounded-full border border-gray-200 dark:border-neutral-700">
+                <span className="text-[10px] font-bold uppercase tracking-wider text-gray-600 dark:text-gray-400 bg-gray-100 dark:bg-neutral-800 px-2 py-0.5 rounded-full border border-dashed border-gray-200 dark:border-neutral-600">
                   {activeEdu?.badge}
                 </span>
-                <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-50 dark:bg-emerald-900/20 text-emerald-700 dark:text-emerald-300 text-xs font-mono border border-emerald-100 dark:border-emerald-800/30">
+                <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-50 dark:bg-emerald-900/20 text-emerald-700 dark:text-emerald-300 text-xs font-mono border border-dashed border-emerald-100 dark:border-emerald-700/50">
                   <Calendar className="w-3 h-3" /> {activeEdu?.year}
                 </div>
               </div>
@@ -219,7 +219,7 @@ const EducationCard: React.FC = () => {
                 {activeEdu?.courses.map((course, i) => (
                   <span
                     key={i}
-                    className="px-3 py-1.5 rounded-lg text-xs font-medium bg-white dark:bg-neutral-800 border border-gray-200 dark:border-neutral-700 text-gray-700 dark:text-gray-300 shadow-sm hover:border-emerald-300 dark:hover:border-emerald-700 transition-colors cursor-default"
+                    className="px-3 py-1.5 rounded-lg text-xs font-medium bg-white dark:bg-neutral-800 border border-dashed border-gray-200 dark:border-neutral-600 text-gray-700 dark:text-gray-300 shadow-sm hover:border-emerald-300 dark:hover:border-emerald-600 transition-colors cursor-default"
                   >
                     {course}
                   </span>
