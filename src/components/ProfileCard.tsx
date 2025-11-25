@@ -7,16 +7,27 @@ const ProfileCard: React.FC = () => {
       {/* Background decoration */}
       <div className="absolute top-0 right-0 w-64 h-64 bg-yellow-100 dark:bg-yellow-500/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 pointer-events-none transition-opacity duration-500 group-hover:opacity-100 opacity-50"></div>
 
-      {/* Mobile & Large Layout: Avatar & Badges (Left Side) */}
-      <div className="relative shrink-0 hidden lg:block">
-        <div className="w-32 h-32 md:w-36 md:h-36 lg:w-32 lg:h-32 rounded-full border-4 border-white dark:border-neutral-800 shadow-xl bg-gray-200 overflow-hidden relative z-10">
+      {/* Avatar & Badges - Different layouts for different screen sizes */}
+      {/* Mobile: Avatar only (no badges on mobile) */}
+      <div className="relative shrink-0 block md:hidden">
+        <div className="w-32 h-32 rounded-full border-4 border-white dark:border-neutral-800 shadow-xl bg-gray-200 overflow-hidden relative z-10">
           <img
             src="/anurag.jpeg"
             alt="Anurag Ambekar"
             className="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-105"
           />
         </div>
+      </div>
 
+      {/* Large Layout (1024px+): Avatar with badges on left */}
+      <div className="relative shrink-0 hidden md:block">
+        <div className="w-32 h-32 rounded-full border-4 border-white dark:border-neutral-800 shadow-xl bg-gray-200 overflow-hidden relative z-10">
+          <img
+            src="/anurag.jpeg"
+            alt="Anurag Ambekar"
+            className="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-105"
+          />
+        </div>
         {/* Badges: Positioned on the avatar perimeter */}
         <div className="absolute -top-2 -right-4 z-20">
           <Badge text="Product" />
@@ -29,41 +40,10 @@ const ProfileCard: React.FC = () => {
         </div>
       </div>
 
-      {/* Medium Layout (768px - 1023px): Photo + Title Row */}
-      <div className="w-full md:flex lg:hidden items-center gap-4 mb-4">
-        <div className="relative shrink-0">
-          <div className="w-24 h-24 rounded-full border-4 border-white dark:border-neutral-800 shadow-xl bg-gray-200 overflow-hidden relative z-10">
-            <img
-              src="/anurag.jpeg"
-              alt="Anurag Ambekar"
-              className="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-105"
-            />
-          </div>
-          {/* Badges for medium layout */}
-          <div className="absolute -top-1 -right-3 z-20">
-            <Badge text="Product" />
-          </div>
-          <div className="absolute top-1/2 -left-6 -translate-y-1/2 z-20">
-            <Badge text="Software" />
-          </div>
-          <div className="absolute -bottom-1 -right-1 z-20">
-            <Badge text="Growth" />
-          </div>
-        </div>
-        <div className="flex-1">
-          <h1 className="text-2xl font-black text-gray-900 dark:text-white tracking-tight leading-tight mb-1">
-            Anurag Ambekar
-          </h1>
-          <h2 className="text-base font-bold text-yellow-600 dark:text-yellow-500">
-            Founding Engineer
-          </h2>
-        </div>
-      </div>
-
       {/* Content Section */}
       <div className="relative z-10 flex flex-col items-center md:items-center lg:items-start text-center md:text-center lg:text-left flex-1 w-full lg:w-auto">
-        {/* Mobile: Name & Title */}
-        <div className="lg:hidden mb-4">
+        {/* Mobile: Name & Title - Only visible on small screens */}
+        <div className="block md:hidden mb-4">
           <h1 className="text-2xl md:text-3xl font-black text-gray-900 dark:text-white tracking-tight leading-tight mb-1">
             Anurag Ambekar
           </h1>
