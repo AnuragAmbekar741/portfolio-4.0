@@ -264,8 +264,24 @@ const ExperienceCard: React.FC = () => {
                           <h3 className="font-bold text-gray-900 dark:text-white text-base group-hover:text-orange-600 dark:group-hover:text-orange-400 transition-colors">
                             {exp.role}
                           </h3>
-                          <span className="flex items-center gap-1.5 text-xs font-mono text-gray-500 dark:text-gray-400 bg-white dark:bg-neutral-900 px-2 py-0.5 rounded-md border border-gray-100 dark:border-neutral-800 whitespace-nowrap">
-                            <Calendar className="w-3 h-3" /> {exp.period}
+                          <span className="flex items-center gap-1.5 text-[10px] md:text-xs font-mono text-gray-500 dark:text-gray-400 bg-white dark:bg-neutral-900 px-2 py-0.5 rounded-md border border-gray-100 dark:border-neutral-800">
+                            <Calendar className="w-3 h-3 hidden md:inline" />
+                            <span className="text-center">
+                              {exp.period.split(" - ").map((part, i, arr) => (
+                                <React.Fragment key={i}>
+                                  {part}
+                                  {i < arr.length - 1 && (
+                                    <>
+                                      <br className="md:hidden" />
+                                      <span className="hidden md:inline">
+                                        {" "}
+                                        -{" "}
+                                      </span>
+                                    </>
+                                  )}
+                                </React.Fragment>
+                              ))}
+                            </span>
                           </span>
                         </div>
 
@@ -299,12 +315,25 @@ const ExperienceCard: React.FC = () => {
                 </div>
 
                 {/* Role & Date Line - Justify End */}
-                <div className="flex flex-col justify-end items-center gap-1 mb-4">
+                <div className="flex flex-col justify-end items-end gap-1 mb-4">
                   <h3 className="text-md font-medium text-orange-600 dark:text-stone-100">
                     {activeExp?.role}
                   </h3>
-                  <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-orange-50 dark:bg-orange-900/20 text-orange-700 dark:text-orange-300 text-xs font-mono border border-orange-100 dark:border-orange-800/30">
-                    <Calendar className="w-3 h-3" /> {activeExp?.period}
+                  <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-md bg-orange-50 dark:bg-orange-900/20 text-orange-700 dark:text-orange-300 text-[10px] md:text-xs font-mono border border-orange-100 dark:border-orange-800/30">
+                    <Calendar className="w-3 h-3 hidden md:inline" />
+                    <span className="text-center">
+                      {activeExp?.period.split(" - ").map((part, i, arr) => (
+                        <React.Fragment key={i}>
+                          {part}
+                          {i < arr.length - 1 && (
+                            <>
+                              <br className="md:hidden" />{" "}
+                              <span className="hidden md:inline"> - </span>
+                            </>
+                          )}
+                        </React.Fragment>
+                      ))}
+                    </span>
                   </div>
                 </div>
               </div>
