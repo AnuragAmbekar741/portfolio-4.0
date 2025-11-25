@@ -46,23 +46,28 @@ const ProfileCard: React.FC = () => {
         <div className="flex gap-3">
           <SocialLink
             icon={<Github className="w-5 h-5" />}
-            href="#"
+            href="https://github.com/AnuragAmbekar741"
             label="Github"
+            target="_blank"
           />
           <SocialLink
             icon={<Linkedin className="w-5 h-5" />}
-            href="#"
+            href="https://www.linkedin.com/in/anurag-ambekar-a80b12217/"
             label="LinkedIn"
+            target="_blank"
           />
           <SocialLink
             icon={<Mail className="w-5 h-5" />}
-            href="mailto:anurag.1997.ambekar@gmail.com"
+            href="mailto:anuragambekar1997@gmail.com"
             label="Email"
+            target="_blank"
           />
           <SocialLink
             icon={<FileText className="w-5 h-5" />}
-            href="#"
+            href="/AnuragAmbekar.pdf"
             label="Resume"
+            target="_blank"
+            download="Anurag_Ambekar_Resume.pdf"
           />
         </div>
       </div>
@@ -80,13 +85,20 @@ const SocialLink = ({
   icon,
   href,
   label,
+  target,
+  download,
 }: {
   icon: React.ReactNode;
   href: string;
   label: string;
+  target?: string;
+  download?: string;
 }) => (
   <a
     href={href}
+    target={target}
+    download={download}
+    rel={target === "_blank" ? "noopener noreferrer" : undefined}
     className="p-2.5 rounded-xl bg-gray-50 dark:bg-neutral-800 text-gray-600 dark:text-gray-300 border border-transparent hover:border-gray-200 dark:hover:border-neutral-700 transition-all duration-200 flex items-center justify-center hover:shadow-sm hover:-translate-y-1"
     title={label}
     aria-label={label}
