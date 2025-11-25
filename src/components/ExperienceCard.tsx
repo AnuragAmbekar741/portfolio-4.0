@@ -306,37 +306,61 @@ const ExperienceCard: React.FC = () => {
           ) : (
             /* DETAIL VIEW */
             <div className="h-full flex flex-col">
-              <div className="mb-6 flex items-center justify-between border-b border-dashed border-gray-200 dark:border-neutral-800 pb-3">
-                {/* Company Header */}
-                <div className="flex items-center gap-3 mb-3">
-                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-orange-400 to-orange-600 flex items-center justify-center text-white font-bold text-lg shadow-lg shadow-orange-500/20 shrink-0">
-                    {activeExp?.logoInitials}
+              <div className="mb-6 border-b border-dashed border-gray-200 dark:border-neutral-800 pb-3">
+                {/* Desktop Layout */}
+                <div className="hidden md:flex items-center justify-between">
+                  {/* Company Header */}
+                  <div className="flex items-center gap-3 mb-3">
+                    <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-orange-400 to-orange-600 flex items-center justify-center text-white font-bold text-lg shadow-lg shadow-orange-500/20 shrink-0">
+                      {activeExp?.logoInitials}
+                    </div>
+                    <h2 className="text-2xl font-bold text-gray-900 dark:text-white leading-tight">
+                      {activeExp?.company}
+                    </h2>
                   </div>
-                  <h2 className="text-2xl font-bold text-gray-900 dark:text-white leading-tight">
-                    {activeExp?.company}
-                  </h2>
+
+                  {/* Role & Date Line - Justify End */}
+                  <div className="flex flex-col justify-end items-end gap-1 mb-4">
+                    <h3 className="text-md font-medium text-orange-600 dark:text-stone-100">
+                      {activeExp?.role}
+                    </h3>
+                    <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-md bg-orange-50 dark:bg-orange-900/20 text-orange-700 dark:text-orange-300 text-[10px] md:text-xs font-mono border border-orange-100 dark:border-orange-800/30">
+                      <Calendar className="w-3 h-3 hidden md:inline" />
+                      <span className="text-center">
+                        {activeExp?.period.split(" - ").map((part, i, arr) => (
+                          <React.Fragment key={i}>
+                            {part}
+                            {i < arr.length - 1 && (
+                              <>
+                                <br className="md:hidden" />{" "}
+                                <span className="hidden md:inline"> - </span>
+                              </>
+                            )}
+                          </React.Fragment>
+                        ))}
+                      </span>
+                    </div>
+                  </div>
                 </div>
 
-                {/* Role & Date Line - Justify End */}
-                <div className="flex flex-col justify-end items-end gap-1 mb-4">
-                  <h3 className="text-md font-medium text-orange-600 dark:text-stone-100">
-                    {activeExp?.role}
-                  </h3>
-                  <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-md bg-orange-50 dark:bg-orange-900/20 text-orange-700 dark:text-orange-300 text-[10px] md:text-xs font-mono border border-orange-100 dark:border-orange-800/30">
-                    <Calendar className="w-3 h-3 hidden md:inline" />
-                    <span className="text-center">
-                      {activeExp?.period.split(" - ").map((part, i, arr) => (
-                        <React.Fragment key={i}>
-                          {part}
-                          {i < arr.length - 1 && (
-                            <>
-                              <br className="md:hidden" />{" "}
-                              <span className="hidden md:inline"> - </span>
-                            </>
-                          )}
-                        </React.Fragment>
-                      ))}
+                {/* Mobile Layout - Compact Single Div */}
+                <div className="md:hidden flex items-center justify-between gap-2.5">
+                  <div className="flex items-center gap-2">
+                    <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-orange-400 to-orange-600 flex items-center justify-center text-white font-bold text-xs shadow-md shadow-orange-500/20 shrink-0">
+                      {activeExp?.logoInitials}
+                    </div>
+                    <h2 className="text-sm font-bold text-gray-900 dark:text-white leading-tight truncate">
+                      {activeExp?.company}
+                    </h2>
+                  </div>
+                  <div className="flex flex-col gap-1 items-end shrink-0">
+                    <span className="px-2 py-0.5 rounded-md bg-orange-100 dark:bg-orange-900/30 text-orange-700 dark:text-orange-300 text-[10px] font-semibold border border-orange-200 dark:border-orange-800/50 whitespace-nowrap">
+                      {activeExp?.role}
                     </span>
+                    <div className="inline-flex items-center gap-1 text-[9px] font-mono text-gray-500 dark:text-gray-400">
+                      <Calendar className="w-2.5 h-2.5" />
+                      <span className="mt-0.5">{activeExp?.period}</span>
+                    </div>
                   </div>
                 </div>
               </div>
