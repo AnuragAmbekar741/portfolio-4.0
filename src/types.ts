@@ -14,9 +14,11 @@ export interface Education {
   degree: string;
   institution: string;
   year: string;
-  details: string;
+  // details: string;
   type: "master" | "bachelor";
   courses: string[];
+  location: string;
+  badge: string;
 }
 
 export interface Skill {

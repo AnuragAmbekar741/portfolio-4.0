@@ -14,15 +14,16 @@ const educationData: Education[] = [
     degree: "M.S. Computer Science",
     institution: "Central Michigan University",
     year: "08/2024 - 12/2025",
-    details:
-      "Mount Pleasant, MI. Advanced studies focused on scalable systems and intelligent algorithms.",
+    location: "Michigan",
+    badge: "State University",
     type: "master",
     courses: [
-      "Distributed Systems",
+      "Supervised Machine learning",
+      "Software and Data Modeling",
+      "Advance Database Systems",
       "Cloud Computing",
-      "Machine Learning",
-      "Advanced Algorithms",
-      "Network Security",
+      "Design and Analysis of Algorithms",
+      "Data Engineering",
     ],
   },
   {
@@ -30,16 +31,16 @@ const educationData: Education[] = [
     degree: "B.E. Information Technology",
     institution: "Sinhgad Institute of Technology",
     year: "06/2015 - 07/2019",
-    details:
-      "Pune, India. Comprehensive foundation in computer science engineering and software development life cycle.",
+    location: "Pune",
+    badge: "Pune University",
     type: "bachelor",
     courses: [
-      "Data Structures",
+      "Fundamentals of Data Structures",
       "Object Oriented Programming",
       "DBMS",
       "Operating Systems",
       "Computer Networks",
-      "Web Technology",
+      "Theory of Computation",
     ],
   },
 ];
@@ -167,9 +168,12 @@ const EducationCard: React.FC = () => {
                           <div className="text-sm font-medium text-gray-500 dark:text-gray-400 mt-0.5">
                             {edu.institution}
                           </div>
-                          <div className="flex items-center gap-2 mt-2">
+                          <div className="flex items-center gap-2 mt-2 flex-wrap">
                             <span className="text-[10px] font-bold uppercase tracking-wider text-emerald-600 dark:text-emerald-400 bg-emerald-100 dark:bg-emerald-900/30 px-2 py-0.5 rounded-full">
                               {edu.type}
+                            </span>
+                            <span className="text-[10px] font-bold uppercase tracking-wider text-gray-600 dark:text-gray-400 bg-gray-100 dark:bg-neutral-800 px-2 py-0.5 rounded-full border border-gray-200 dark:border-neutral-700">
+                              {edu.badge}
                             </span>
                             <span className="flex items-center gap-1 text-xs text-gray-400 dark:text-gray-500">
                               <Calendar className="w-3 h-3" /> {edu.year}
@@ -194,15 +198,17 @@ const EducationCard: React.FC = () => {
               <h3 className="text-lg font-medium text-emerald-600 dark:text-emerald-400 mb-2">
                 {activeEdu?.institution}
               </h3>
-              <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-50 dark:bg-emerald-900/20 text-emerald-700 dark:text-emerald-300 text-xs font-mono border border-emerald-100 dark:border-emerald-800/30">
-                <Calendar className="w-3 h-3" /> {activeEdu?.year}
+              <div className="flex items-center gap-2 mb-2 flex-wrap">
+                <span className="text-xs font-medium text-gray-500 dark:text-gray-400">
+                  {activeEdu?.location}
+                </span>
+                <span className="text-[10px] font-bold uppercase tracking-wider text-gray-600 dark:text-gray-400 bg-gray-100 dark:bg-neutral-800 px-2 py-0.5 rounded-full border border-gray-200 dark:border-neutral-700">
+                  {activeEdu?.badge}
+                </span>
+                <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-50 dark:bg-emerald-900/20 text-emerald-700 dark:text-emerald-300 text-xs font-mono border border-emerald-100 dark:border-emerald-800/30">
+                  <Calendar className="w-3 h-3" /> {activeEdu?.year}
+                </div>
               </div>
-            </div>
-
-            <div className="bg-gray-50 dark:bg-neutral-800/30 rounded-2xl p-5 mb-6 border border-gray-100 dark:border-neutral-800/50">
-              <p className="text-gray-600 dark:text-gray-300 leading-relaxed text-sm">
-                {activeEdu?.details}
-              </p>
             </div>
 
             <div>
