@@ -34,7 +34,7 @@ const App: React.FC = () => {
   };
 
   // Common styles for the dashed partition lines
-  const dashedBorder = "border-dashed border-gray-200 dark:border-neutral-800";
+  const dashedBorder = "border-dashed border-gray-200 dark:border-neutral-700";
 
   return (
     <div className="min-h-screen p-4 md:p-8 flex flex-col items-center justify-center transition-colors duration-300 selection:bg-accent-200 dark:selection:bg-accent-900 bg-gray-50 dark:bg-neutral-950">
