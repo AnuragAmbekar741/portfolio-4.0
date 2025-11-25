@@ -11,7 +11,7 @@ const ProfileCard: React.FC = () => {
       <div className="relative shrink-0 hidden lg:block">
         <div className="w-32 h-32 md:w-36 md:h-36 lg:w-32 lg:h-32 rounded-full border-4 border-white dark:border-neutral-800 shadow-xl bg-gray-200 overflow-hidden relative z-10">
           <img
-            src="https://picsum.photos/200/200"
+            src="/anurag.jpeg"
             alt="Anurag Ambekar"
             className="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-105"
           />
@@ -34,7 +34,7 @@ const ProfileCard: React.FC = () => {
         <div className="relative shrink-0">
           <div className="w-24 h-24 rounded-full border-4 border-white dark:border-neutral-800 shadow-xl bg-gray-200 overflow-hidden relative z-10">
             <img
-              src="https://picsum.photos/200/200"
+              src="/anurag.jpeg"
               alt="Anurag Ambekar"
               className="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-105"
             />
@@ -84,7 +84,7 @@ const ProfileCard: React.FC = () => {
 
         {/* Description */}
         <p className="text-xs md:text-sm text-gray-600 dark:text-gray-300 font-medium leading-relaxed mb-6 max-w-sm">
-          I love to work at the intersection of product, growth, and software.
+          I love to work at the intersection of product, growth and software.
           Want to make each bit of my code count towards business impact.
         </p>
 
