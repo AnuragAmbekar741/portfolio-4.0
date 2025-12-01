@@ -7,20 +7,15 @@ import FunFactsCard from "./components/FunFactsCard";
 import { Theme } from "./types";
 
 const App: React.FC = () => {
-  const [theme, setTheme] = useState<Theme>(Theme.LIGHT);
+  const [theme, setTheme] = useState<Theme>(Theme.DARK);
   const [aiQuery, setAiQuery] = useState<string>("");
 
-  // Initialize theme based on system preference
+  // Force dark theme - always apply dark class
   useEffect(() => {
-    if (
-      window.matchMedia &&
-      window.matchMedia("(prefers-color-scheme: dark)").matches
-    ) {
-      setTheme(Theme.DARK);
-    }
+    document.documentElement.classList.add("dark");
   }, []);
 
-  // Update DOM class when theme changes
+  // Update DOM class when theme changes (kept for consistency, but theme will always be DARK)
   useEffect(() => {
     if (theme === Theme.DARK) {
       document.documentElement.classList.add("dark");
@@ -28,10 +23,6 @@ const App: React.FC = () => {
       document.documentElement.classList.remove("dark");
     }
   }, [theme]);
-
-  const toggleTheme = () => {
-    setTheme((prev) => (prev === Theme.LIGHT ? Theme.DARK : Theme.LIGHT));
-  };
 
   // Common styles for the dashed partition lines
   const dashedBorder = "border-dashed border-gray-200 dark:border-neutral-700";
