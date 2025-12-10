@@ -203,8 +203,8 @@ const ExperienceCard: React.FC = () => {
           }`}
         >
           <div className="flex items-center gap-3">
-            <div className="p-2 bg-orange-100 dark:bg-orange-900/30 rounded-xl">
-              <Briefcase className="w-5 h-5 text-orange-600 dark:text-orange-500" />
+            <div className="p-2 bg-gray-100 dark:bg-gray-900/30 rounded-xl">
+              <Briefcase className="w-5 h-5 text-gray-600 dark:text-gray-400" />
             </div>
             <h2 className="text-xl font-bold text-gray-900 dark:text-white">
               Experience
@@ -214,7 +214,7 @@ const ExperienceCard: React.FC = () => {
           {selectedId && (
             <button
               onClick={handleBack}
-              className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-gray-500 hover:text-orange-600 dark:text-gray-400 dark:hover:text-orange-400 transition-colors px-3 py-1.5 rounded-full hover:bg-orange-50 dark:hover:bg-neutral-800"
+              className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-gray-500 hover:text-gray-600 dark:text-gray-400 dark:hover:text-gray-300 transition-colors px-3 py-1.5 rounded-full hover:bg-gray-50 dark:hover:bg-neutral-800"
             >
               <ArrowLeft className="w-3 h-3" /> Back
             </button>
@@ -222,7 +222,7 @@ const ExperienceCard: React.FC = () => {
         </div>
 
         {/* Background Decoration */}
-        <div className="absolute top-0 right-0 w-64 h-64 bg-orange-100/40 dark:bg-orange-900/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 pointer-events-none"></div>
+        <div className="absolute top-0 right-0 w-64 h-64 bg-gray-100/40 dark:bg-gray-500/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 pointer-events-none"></div>
 
         {/* Main Content Area with Transition Support */}
         <div
@@ -250,8 +250,8 @@ const ExperienceCard: React.FC = () => {
                       ></div>
 
                       {/* The Dot */}
-                      <div className="relative z-10 mt-2 w-3 h-3 rounded-full bg-white dark:bg-neutral-900 border-2 border-gray-200 dark:border-neutral-700 group-hover:border-orange-500 transition-colors duration-300 flex items-center justify-center shadow-sm">
-                        <div className="w-1 h-1 rounded-full bg-gray-300 dark:bg-neutral-600 group-hover:bg-orange-500 transition-colors duration-300"></div>
+                      <div className="relative z-10 mt-2 w-3 h-3 rounded-full bg-white dark:bg-neutral-900 border-2 border-gray-200 dark:border-neutral-700 group-hover:border-gray-500 transition-colors duration-300 flex items-center justify-center shadow-sm">
+                        <div className="w-1 h-1 rounded-full bg-gray-300 dark:bg-neutral-600 group-hover:bg-gray-500 transition-colors duration-300"></div>
                       </div>
                     </div>
 
@@ -261,10 +261,10 @@ const ExperienceCard: React.FC = () => {
                         !isLast ? "pb-8" : "pb-2"
                       } overflow-hidden`}
                     >
-                      <div className="p-4 rounded-2xl bg-gray-50 dark:bg-neutral-800/50 border border-dashed border-transparent hover:border-orange-200 dark:hover:border-orange-700/60 hover:bg-white dark:hover:bg-neutral-800 hover:shadow-md dark:hover:shadow-none transition-all duration-300">
+                      <div className="p-4 rounded-2xl bg-gray-50 dark:bg-neutral-800/50 border border-dashed border-transparent hover:border-gray-200 dark:hover:border-gray-700/60 hover:bg-white dark:hover:bg-neutral-800 hover:shadow-md dark:hover:shadow-none transition-all duration-300 group-hover:-translate-y-1">
                         {/* Row 1: Role and Date */}
                         <div className="flex items-start justify-between mb-1">
-                          <h3 className="font-bold text-gray-900 dark:text-white text-base group-hover:text-orange-600 dark:group-hover:text-orange-400 transition-colors">
+                          <h3 className="font-bold text-gray-900 dark:text-white text-base group-hover:text-gray-600 dark:group-hover:text-gray-400 transition-colors">
                             {exp.role}
                           </h3>
                           <span className="flex items-center gap-1.5 text-[10px] md:text-xs font-mono text-gray-500 dark:text-gray-400 bg-white dark:bg-neutral-900 px-2 py-0.5 rounded-md border border-dashed border-gray-100 dark:border-neutral-600">
@@ -311,7 +311,7 @@ const ExperienceCard: React.FC = () => {
                 <div className="hidden md:flex items-center justify-between">
                   {/* Company Header */}
                   <div className="flex items-center gap-3 mb-3">
-                    <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-orange-400 to-orange-600 flex items-center justify-center text-white font-bold text-lg shadow-lg shadow-orange-500/20 shrink-0">
+                    <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-gray-400 to-gray-600 flex items-center justify-center text-white font-bold text-lg shadow-lg shadow-gray-500/20 shrink-0">
                       {activeExp?.logoInitials}
                     </div>
                     <h2 className="text-2xl font-bold text-gray-900 dark:text-white leading-tight">
@@ -321,10 +321,10 @@ const ExperienceCard: React.FC = () => {
 
                   {/* Role & Date Line - Justify End */}
                   <div className="flex flex-col justify-end items-end gap-1 mb-4">
-                    <h3 className="text-md font-medium text-orange-600 dark:text-stone-100">
+                    <h3 className="text-md font-medium text-gray-600 dark:text-gray-300">
                       {activeExp?.role}
                     </h3>
-                    <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-md bg-orange-50 dark:bg-orange-900/20 text-orange-700 dark:text-orange-300 text-[10px] md:text-xs font-mono border border-dashed border-orange-100 dark:border-orange-700/50">
+                    <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-md bg-gray-50 dark:bg-gray-900/20 text-gray-700 dark:text-gray-300 text-[10px] md:text-xs font-mono border border-dashed border-gray-100 dark:border-gray-700/50">
                       <Calendar className="w-3 h-3 hidden md:inline" />
                       <span className="text-center">
                         {activeExp?.period.split(" - ").map((part, i, arr) => (
@@ -346,7 +346,7 @@ const ExperienceCard: React.FC = () => {
                 {/* Mobile Layout - Compact Single Div */}
                 <div className="md:hidden flex items-center justify-between gap-2.5">
                   <div className="flex items-center gap-2">
-                    <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-orange-400 to-orange-600 flex items-center justify-center text-white font-bold text-xs shadow-md shadow-orange-500/20 shrink-0">
+                    <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-gray-400 to-gray-600 flex items-center justify-center text-white font-bold text-xs shadow-md shadow-gray-500/20 shrink-0">
                       {activeExp?.logoInitials}
                     </div>
                     <h2 className="text-sm font-bold text-gray-900 dark:text-white leading-tight truncate">
@@ -354,7 +354,7 @@ const ExperienceCard: React.FC = () => {
                     </h2>
                   </div>
                   <div className="flex flex-col gap-1 items-end shrink-0">
-                    <span className="px-2 py-0.5 rounded-md bg-orange-100 dark:bg-orange-900/30 text-orange-700 dark:text-orange-300 text-[10px] font-semibold border border-dashed border-orange-200 dark:border-orange-700/60 whitespace-nowrap">
+                    <span className="px-2 py-0.5 rounded-md bg-gray-100 dark:bg-gray-900/30 text-gray-700 dark:text-gray-300 text-[10px] font-semibold border border-dashed border-gray-200 dark:border-gray-700/60 whitespace-nowrap">
                       {activeExp?.role}
                     </span>
                     <div className="inline-flex items-center gap-1 text-[9px] font-mono text-gray-500 dark:text-gray-400">
@@ -375,7 +375,7 @@ const ExperienceCard: React.FC = () => {
                     key={idx}
                     className="flex items-start gap-3 group p-2 rounded-lg hover:bg-gray-50 dark:hover:bg-neutral-800/50 transition-colors"
                   >
-                    <CheckCircle2 className="w-4 h-4 text-orange-500 mt-0.5 shrink-0" />
+                    <CheckCircle2 className="w-4 h-4 text-gray-500 mt-0.5 shrink-0" />
                     <span className="text-gray-700 dark:text-gray-300 text-sm leading-relaxed">
                       {item}
                     </span>

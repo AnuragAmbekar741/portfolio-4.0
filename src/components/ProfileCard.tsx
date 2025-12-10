@@ -5,7 +5,7 @@ const ProfileCard: React.FC = () => {
   return (
     <div className="h-full w-full bg-white dark:bg-neutral-900 p-6 md:p-8 relative overflow-hidden flex flex-col lg:flex-row items-center gap-6 lg:gap-10 group">
       {/* Background decoration */}
-      <div className="absolute top-0 right-0 w-64 h-64 bg-yellow-100 dark:bg-yellow-500/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 pointer-events-none transition-opacity duration-500 group-hover:opacity-100 opacity-50"></div>
+      <div className="absolute top-0 right-0 w-64 h-64 bg-gray-100 dark:bg-gray-500/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 pointer-events-none transition-opacity duration-500 group-hover:opacity-100 opacity-50"></div>
 
       {/* Avatar & Badges - Different layouts for different screen sizes */}
       {/* Mobile: Avatar only (no badges on mobile) */}
@@ -44,10 +44,10 @@ const ProfileCard: React.FC = () => {
       <div className="relative z-10 flex flex-col items-center md:items-center lg:items-start text-center md:text-center lg:text-left flex-1 w-full lg:w-auto">
         {/* Mobile: Name & Title - Only visible on small screens */}
         <div className="block md:hidden mb-4">
-          <h1 className="text-2xl md:text-3xl font-black text-gray-900 dark:text-white tracking-tight leading-tight mb-1">
+          <h1 className="text-2xl md:text-3xl font-light font-black text-gray-900 dark:text-white tracking-tight leading-tight mb-1">
             Anurag Ambekar
           </h1>
-          <h2 className="text-base md:text-lg font-bold text-yellow-600 dark:text-yellow-500 mb-4">
+          <h2 className="text-base md:text-lg font-bold text-gray-600 dark:text-gray-400 mb-4">
             Founding Engineer
           </h2>
         </div>
@@ -57,7 +57,7 @@ const ProfileCard: React.FC = () => {
           <h1 className="text-2xl md:text-3xl lg:text-4xl font-black text-gray-900 dark:text-white tracking-tight leading-tight mb-1">
             Anurag Ambekar
           </h1>
-          <h2 className="text-base md:text-lg lg:text-xl font-bold text-yellow-600 dark:text-yellow-500 mb-4">
+          <h2 className="text-base md:text-lg lg:text-xl font-bold text-gray-600 dark:text-gray-400 mb-4">
             Founding Engineer
           </h2>
         </div>

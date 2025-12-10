@@ -24,15 +24,15 @@ const TechStackCard: React.FC = () => {
 
   return (
     <div className="h-full w-full bg-white dark:bg-neutral-900 p-6 flex flex-col relative overflow-hidden">
-      {/* Background Decoration - Blue */}
-      <div className="absolute top-0 right-0 w-64 h-64 bg-blue-100/40 dark:bg-blue-600/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 pointer-events-none"></div>
+      {/* Background Decoration */}
+      <div className="absolute top-0 right-0 w-64 h-64 bg-gray-100/40 dark:bg-gray-500/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 pointer-events-none"></div>
 
       {/* Header */}
-      <div className="flex items-center gap-3 mb-4 relative z-10 shrink-0">
-        <div className="p-2 bg-blue-100 dark:bg-blue-900/30 rounded-xl">
-          <FolderGit className="w-5 h-5 text-blue-600 dark:text-blue-400" />
+      <div className="flex items-center justify-start gap-3 mb-4 relative z-10 shrink-0">
+        <div className="bg-gray-100 dark:bg-gray-900/30 rounded-xl">
+          <FolderGit className="w-5 h-5 text-gray-600 dark:text-gray-400" />
         </div>
-        <h2 className="text-xl font-bold text-gray-900 dark:text-white">
+        <h2 className="text-base md:text-lg font-bold text-gray-600 dark:text-gray-400">
           Projects
         </h2>
       </div>
@@ -57,7 +57,7 @@ const TechStackCard: React.FC = () => {
             >
               <div className="flex items-center gap-2">
                 <span className="text-green-400 font-bold">➜</span>
-                <span className="text-blue-400">~/projects</span>
+                <span className="text-gray-400">~/projects</span>
                 <span className="text-white">git add .</span>
               </div>
             </div>
@@ -72,7 +72,7 @@ const TechStackCard: React.FC = () => {
             >
               <div className="flex items-center gap-2">
                 <span className="text-green-400 font-bold">➜</span>
-                <span className="text-blue-400">~/projects</span>
+                <span className="text-gray-400">~/projects</span>
                 <span className="text-white">
                   git commit -m "feat: new stuff"
                 </span>
@@ -93,7 +93,7 @@ const TechStackCard: React.FC = () => {
             >
               <div className="flex items-center gap-2">
                 <span className="text-green-400 font-bold">➜</span>
-                <span className="text-blue-400">~/projects</span>
+                <span className="text-gray-400">~/projects</span>
                 <span className="text-white">git push origin main</span>
               </div>
             </div>

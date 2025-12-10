@@ -21,12 +21,12 @@ const FunFactsCard: React.FC = () => {
   return (
     <div className="h-full w-full bg-white dark:bg-neutral-900 p-6 flex flex-col relative overflow-hidden">
       {/* Background Decor - consistent with other cards */}
-      <div className="absolute top-0 right-0 w-32 h-32 bg-yellow-50 dark:bg-yellow-500/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 pointer-events-none"></div>
+      <div className="absolute top-0 right-0 w-32 h-32 bg-gray-50 dark:bg-gray-500/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 pointer-events-none"></div>
 
       {/* Standard Header Layout */}
       <div className="flex items-center gap-3 mb-4 relative z-10 shrink-0">
-        <div className="p-2 bg-yellow-100 dark:bg-yellow-900/30 rounded-xl">
-          <Smile className="w-5 h-5 text-yellow-600 dark:text-yellow-400" />
+        <div className="p-2 bg-gray-100 dark:bg-gray-900/30 rounded-xl">
+          <Smile className="w-5 h-5 text-gray-600 dark:text-gray-400" />
         </div>
         <h2 className="text-xl font-bold text-gray-900 dark:text-white">
           Know me better
@@ -69,7 +69,10 @@ const FunFactsCard: React.FC = () => {
   );
 };
 
-const FactItem = ({ text, emoji }: { text: string; emoji: string }) => (
+const FactItem: React.FC<{ text: string; emoji: string }> = ({
+  text,
+  emoji,
+}) => (
   <div className="p-3.5 rounded-2xl bg-gray-50 dark:bg-neutral-800/50 border border-gray-100 dark:border-neutral-800 flex items-start gap-3 transition-all hover:bg-white dark:hover:bg-neutral-800 hover:shadow-sm hover:border-gray-200 dark:hover:border-neutral-700 cursor-default">
     <span className="text-lg shrink-0 mt-0.5">{emoji}</span>
     <p className="text-sm font-medium text-gray-600 dark:text-gray-300 leading-relaxed">
